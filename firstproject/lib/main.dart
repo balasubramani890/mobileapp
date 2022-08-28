@@ -5,14 +5,21 @@ void main()
   runApp(MyFirstAppDemo());
 }
 
-class MyFirstAppDemo extends StatelessWidget {
+class MyFirstAppDemo extends StatefulWidget {
   const MyFirstAppDemo({Key? key}) : super(key: key);
 
   @override
+  State<MyFirstAppDemo> createState() => _MyFirstAppDemoState();
+}
+
+class _MyFirstAppDemoState extends State<MyFirstAppDemo> {
+  @override
   Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
     return MaterialApp(
-      home: Text('Balasubramani SenthilKumar'),
+      home: SafeArea(
+        child: Text('Senthil Balu'),
+      ),
     );
   }
 }
+
