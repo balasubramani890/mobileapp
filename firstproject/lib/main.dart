@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:firstproject/LoginPage.dart';
 
 void main()
 {
   runApp(MyFirstAppDemo());
 }
 
-class MyFirstAppDemo extends StatefulWidget {
+class MyFirstAppDemo extends StatelessWidget {
   const MyFirstAppDemo({Key? key}) : super(key: key);
 
   @override
-  State<MyFirstAppDemo> createState() => _MyFirstAppDemoState();
-}
-
-class _MyFirstAppDemoState extends State<MyFirstAppDemo> {
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SafeArea(
-        child: Text('Senthil Balu'),
-      ),
+      title: 'Login Page',
+      home: LoginPage(),
     );
   }
 }
-
