@@ -19,14 +19,29 @@ class _SampleAppState extends State<SampleApp> {
         appBar: AppBar(
           title: Text("sample App Bar"),
         ),
-            body:
-            Center(
-              child: FlatButton(onPressed: (){}, color: Colors.green,
-                padding: EdgeInsets.all(15.0),
-                child: Text("click me"),
-              ),
-            ),
-      ),
+         body: Center(
+           child: Container(
+             height: 200,
+             width: 300,
+             decoration: BoxDecoration(
+               border: Border.all(width: 2.0),
+               borderRadius: BorderRadius.circular(5.0),
+                 image: DecorationImage(
+                   image: NetworkImage(
+                  'https://www.pinkvilla.com/imageresize/simbu_mahat_meeting.jpeg?width=752&t=pvorg'
+                 ),
+                   fit: BoxFit.cover,
+                 ),
+             ),
+             child: Center(
+               child: Text("Simbu and Mahat", style: TextStyle(
+                 color: Colors.white, fontSize: 20.0,
+               ),),
+             )
+             ),
+           ),
+         ),
       );
+
   }
 }
