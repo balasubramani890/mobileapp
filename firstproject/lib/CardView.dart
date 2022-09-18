@@ -1,4 +1,5 @@
 import 'package:firstproject/SampleImageApp.dart';
+import 'package:firstproject/AlertBoxSample.dart';
 import 'package:flutter/material.dart';
 
 class CardView extends StatefulWidget {
@@ -44,6 +45,11 @@ class _CardViewState extends State<CardView> {
                 Text("Hi Senthil, If you need to go back to the first page click the Button BOTTOM SHEET CLICK HERE and press OK then you are go back"),
                 RaisedButton(onPressed: showBottom,
                 child: Text("BOTTOM SHEET CLICK HERE"),
+                ),
+                RaisedButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AlertBoxSample()));
+                },
+                 child: Text("Navigate to Alert Box Page"),
                 )
               ],
             ),

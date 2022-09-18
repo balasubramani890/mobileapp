@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firstproject/CardView.dart';
+import 'package:firstproject/AlertBoxSample.dart';
 class SampleImageApp extends StatefulWidget {
   const SampleImageApp({Key? key}) : super(key: key);
 
@@ -62,7 +63,7 @@ class _SampleImageAppState extends State<SampleImageApp> {
           ),
         ),
         RaisedButton(onPressed: (){
-           Navigator.pop(context);
+           Navigator.push(context, MaterialPageRoute(builder: (context)=>CardView()));
         },
           color: Colors.red,
           child: Icon(
