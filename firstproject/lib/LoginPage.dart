@@ -20,7 +20,8 @@ class _LoginPageState extends State<LoginPage> {
           padding: EdgeInsets.all(20),
           child: Column(
            children: <Widget>[
-             Padding(padding: EdgeInsets.all(20),child: TextField(
+             Padding(padding: EdgeInsets.all(20),
+               child: TextField(
                decoration: InputDecoration(
                  icon: Icon(Icons.people),
                  labelText: 'Login Id',
