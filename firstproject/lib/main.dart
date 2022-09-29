@@ -1,131 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:firstproject/loginPage.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 void main()
 {
-  runApp(SampleApp());
+  runApp(HomePage());
 }
 
-class SampleApp extends StatefulWidget {
-  const SampleApp({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<SampleApp> createState() => _SampleAppState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _SampleAppState extends State<SampleApp> {
+// Future<List> getData() async
+// {
+//   var url = "http://192.168.45.202/personalbudget/getdata.php";
+//   final response = await http.get(Uri.parse(url));
+//   var dataReceived = json.decode(response.body);
+//   // print(dataReceived);
+//   return dataReceived;
+// }
+
+class _HomePageState extends State<HomePage> {
+
   @override
+  void initState() {
+    super.initState();
+    // getData();
+  }
+
+   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Senthil App Bar"),
-          backgroundColor: Colors.green,
-          /*leading: IconButton(icon: Icon(Icons.menu),
-            onPressed: ()
-            {
-              print("menu clicked");
-            },
-          ),*/
-          actions: <Widget>[
-            IconButton(
-                icon: Icon(Icons.search),
-                onPressed: (){ print("search Icon");}
+      theme: ThemeData(
+        primaryColor: Colors.red,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.red,
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(width: 1, color: Colors.black),
+          ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(width: 2, color: Colors.red),
             ),
-            IconButton(onPressed: (){ print("more icons");
-              }, icon: Icon(Icons.more_vert))
-          ],
-        ),
-        body: Center(child: Text("Hi Senthil",
-          style: TextStyle(fontSize: 50, color: Colors.red),
         )
-        ),
-        floatingActionButton: FloatingActionButton(
-          elevation: 50,
-          child: Icon(Icons.adb),
-          onPressed: () { print("Floating action button"); },
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        drawer: Drawer(
-          backgroundColor: Colors.green,
-          child: Column(
-            children: const <Widget>[
-              UserAccountsDrawerHeader(
-                  accountName: Text("Senthil"),
-                  accountEmail: Text("rishek_1410@yahoo.com"),
-                currentAccountPicture: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  child: Text("Senthil"),
-                ),
-                otherAccountsPictures: <Widget>[
-                  CircleAvatar(
-                    backgroundColor: Colors.white,
-                )
-                ],
-              ),
-              ListTile(
-                title: Text("Inbox"),
-                leading: Icon(Icons.inbox),
-              ),
-              Divider(
-                height: 0.1,
-              ),
-              ListTile(
-                title: Text("Outbox"),
-                leading: Icon(Icons.outbox),
-              ),
-              Divider(
-                height: 0.1,
-              ),
-              ListTile(
-                title: Text("Draft"),
-                leading: Icon(Icons.drafts),
-              ),
-              Divider(
-                height: 0.1,
-              ),
-              ListTile(
-                title: Text("Social"),
-                leading: Icon(Icons.social_distance),
-              ),
-              Divider(
-                height: 0.1,
-              ),
-            ],
-          ),
-        ),
-        persistentFooterButtons: <Widget>[
-          RaisedButton(onPressed: (){ print("Red Raised Button");},
-            elevation: 10.0,
-            color: Colors.red,
-            child: Icon(Icons.add),
-          ),
-          RaisedButton(onPressed: (){ print("Green Raised Button");},
-            elevation: 10.0,
-            color: Colors.green,
-            child: Icon(Icons.clear),
-          )
-        ],
-       bottomNavigationBar: BottomNavigationBar(
-         currentIndex: 0,
-         fixedColor: Colors.green,
-         items: const [
-           BottomNavigationBarItem(icon: Icon(Icons.home),
-             label: 'home',
-           ),
-           BottomNavigationBarItem(icon: Icon(Icons.search),
-             label: 'search',
-           ),
-           BottomNavigationBarItem(icon: Icon(Icons.camera),
-             label: 'camara',
-           ),
-         ],
-         onTap: (int index){
-           print(index.toString());
-         },
-       ),
-        backgroundColor: Colors.green,
       ),
+      debugShowCheckedModeBanner: false,
+      home: const LoginPage(),
     );
   }
 }
